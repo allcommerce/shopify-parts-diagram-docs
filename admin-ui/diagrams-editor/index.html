@@ -874,18 +874,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#rectangle-hotspots" class="md-nav__link">
+  <a href="#polygon-hotspots" class="md-nav__link">
     <span class="md-ellipsis">
-      Rectangle hotspots
+      Polygon hotspots
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#point-hotspots" class="md-nav__link">
+  <a href="#pin-hotspots" class="md-nav__link">
     <span class="md-ellipsis">
-      Point hotspots
+      Pin hotspots
     </span>
   </a>
   
@@ -906,9 +906,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mapping-a-hotspot-to-a-product" class="md-nav__link">
+  <a href="#assigning-a-product-to-a-hotspot" class="md-nav__link">
     <span class="md-ellipsis">
-      Mapping a hotspot to a product
+      Assigning a product to a hotspot
     </span>
   </a>
   
@@ -927,6 +927,15 @@
   <a href="#saving" class="md-nav__link">
     <span class="md-ellipsis">
       Saving
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zoom-and-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zoom and navigation
     </span>
   </a>
   
@@ -1666,18 +1675,18 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#rectangle-hotspots" class="md-nav__link">
+  <a href="#polygon-hotspots" class="md-nav__link">
     <span class="md-ellipsis">
-      Rectangle hotspots
+      Polygon hotspots
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#point-hotspots" class="md-nav__link">
+  <a href="#pin-hotspots" class="md-nav__link">
     <span class="md-ellipsis">
-      Point hotspots
+      Pin hotspots
     </span>
   </a>
   
@@ -1698,9 +1707,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mapping-a-hotspot-to-a-product" class="md-nav__link">
+  <a href="#assigning-a-product-to-a-hotspot" class="md-nav__link">
     <span class="md-ellipsis">
-      Mapping a hotspot to a product
+      Assigning a product to a hotspot
     </span>
   </a>
   
@@ -1719,6 +1728,15 @@
   <a href="#saving" class="md-nav__link">
     <span class="md-ellipsis">
       Saving
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zoom-and-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zoom and navigation
     </span>
   </a>
   
@@ -1750,93 +1768,130 @@
 
 <h1 id="diagram-editor">Diagram Editor<a class="headerlink" href="#diagram-editor" title="Permanent link">&para;</a></h1>
 <p>The editor is where you transform a flat image into an interactive
-diagram. Open it by clicking any diagram from the list, or by clicking
-<strong>Save</strong> on the create screen.</p>
+diagram by drawing hotspots and mapping them to Shopify products.</p>
+<p>Open it by clicking any diagram name from the list, then clicking <strong>Edit</strong>,
+or by clicking <strong>Save &amp; Continue</strong> on the create screen.</p>
 <h2 id="layout">Layout<a class="headerlink" href="#layout" title="Permanent link">&para;</a></h2>
-<p>The editor is a two-column workspace:</p>
-<ul>
-<li><strong>Canvas (left)</strong> — your diagram image with the hotspot overlay.</li>
-<li><strong>Inspector (right)</strong> — properties of the currently selected hotspot:
-  label, mapped product, mapped variant, custom display title.</li>
-</ul>
-<p>A <strong>toolbar</strong> at the top of the canvas switches between modes:</p>
+<p>The editor is a split workspace:</p>
 <table>
 <thead>
 <tr>
-<th>Mode</th>
+<th>Area</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Canvas</strong> (centre)</td>
+<td>Your diagram image with the hotspot overlay</td>
+</tr>
+<tr>
+<td><strong>Toolbar</strong> (left edge)</td>
+<td>Tools for drawing, selecting, and navigating</td>
+</tr>
+<tr>
+<td><strong>Inspector</strong> (right panel)</td>
+<td>Properties of the currently selected hotspot</td>
+</tr>
+<tr>
+<td><strong>Parts List</strong> (bottom)</td>
+<td>Table of all hotspots — label, type, and mapping status</td>
+</tr>
+</tbody>
+</table>
+<p>A <strong>toolbar</strong> runs down the left edge of the canvas:</p>
+<table>
+<thead>
+<tr>
+<th>Icon</th>
+<th>Tool</th>
 <th>Shortcut</th>
 <th>What it does</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>Arrow</td>
 <td>Select</td>
 <td><code>V</code></td>
 <td>Move and resize existing hotspots</td>
 </tr>
 <tr>
-<td>Draw rectangle</td>
+<td>Pentagon</td>
+<td>Polygon</td>
 <td><code>R</code></td>
 <td>Click-and-drag a rectangle hotspot</td>
 </tr>
 <tr>
-<td>Draw point</td>
+<td>Pin</td>
+<td>Pin</td>
 <td><code>P</code></td>
 <td>Click to drop a point hotspot</td>
 </tr>
 <tr>
+<td>Hand</td>
 <td>Pan</td>
 <td><code>Space</code> (hold)</td>
 <td>Drag the canvas</td>
 </tr>
 <tr>
-<td>Zoom</td>
-<td>scroll</td>
-<td>Zoom canvas under cursor</td>
+<td><code>+</code> magnifier</td>
+<td>Zoom in</td>
+<td>scroll up</td>
+<td>Zoom in</td>
+</tr>
+<tr>
+<td><code>−</code> magnifier</td>
+<td>Zoom out</td>
+<td>scroll down</td>
+<td>Zoom out</td>
+</tr>
+<tr>
+<td>Curved arrow</td>
+<td>Undo</td>
+<td><code>Cmd/Ctrl + Z</code></td>
+<td>Undo last change</td>
 </tr>
 </tbody>
 </table>
 <h2 id="drawing-hotspots">Drawing hotspots<a class="headerlink" href="#drawing-hotspots" title="Permanent link">&para;</a></h2>
-<h3 id="rectangle-hotspots">Rectangle hotspots<a class="headerlink" href="#rectangle-hotspots" title="Permanent link">&para;</a></h3>
-<p>Best for parts with a clear bounding box (a wheel, a button, a panel).</p>
+<h3 id="polygon-hotspots">Polygon hotspots<a class="headerlink" href="#polygon-hotspots" title="Permanent link">&para;</a></h3>
+<p>Best for parts with a clear bounding area — a boiler, a panel, a wheel.</p>
 <ol>
-<li>Press <code>R</code> or click the rectangle tool.</li>
-<li>Click-and-drag from one corner to the opposite corner of the part.</li>
+<li>Press <code>R</code> or click the <strong>Pentagon</strong> tool.</li>
+<li>Click and drag from one corner to the opposite corner of the part.</li>
 <li>Release to commit. The hotspot is selected and its inspector opens.</li>
 </ol>
-<h3 id="point-hotspots">Point hotspots<a class="headerlink" href="#point-hotspots" title="Permanent link">&para;</a></h3>
-<p>Best for small parts where a rectangle would feel cluttered (a screw,
-a connector, an indicator light).</p>
+<h3 id="pin-hotspots">Pin hotspots<a class="headerlink" href="#pin-hotspots" title="Permanent link">&para;</a></h3>
+<p>Best for small, precise parts where a rectangle would feel too large or
+cluttered — a screw, a connector, a valve.</p>
 <ol>
-<li>Press <code>P</code> or click the point tool.</li>
-<li>Click the location once. The point is dropped and selected.</li>
+<li>Press <code>P</code> or click the <strong>Pin</strong> tool.</li>
+<li>Click once at the exact location. The pin is dropped and selected.</li>
 </ol>
 <h3 id="editing-a-hotspot">Editing a hotspot<a class="headerlink" href="#editing-a-hotspot" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Drag the body to <strong>move</strong>.</li>
-<li>Drag a corner handle to <strong>resize</strong> (rectangles only).</li>
-<li>Press <kbd>Delete</kbd> or <kbd>Backspace</kbd> to <strong>remove</strong> the
-  selected hotspot.</li>
-<li>Use <kbd>Cmd</kbd>/<kbd>Ctrl</kbd> + <kbd>Z</kbd> / <kbd>Shift</kbd> +
-  <kbd>Cmd</kbd>/<kbd>Ctrl</kbd> + <kbd>Z</kbd> for undo / redo.</li>
+<li><strong>Move</strong> — drag the hotspot body.</li>
+<li><strong>Resize</strong> — drag a corner handle (polygon hotspots only).</li>
+<li><strong>Delete</strong> — press <code>Delete</code> or <code>Backspace</code> while the hotspot is selected.</li>
+<li><strong>Undo / Redo</strong> — <code>Cmd/Ctrl + Z</code> / <code>Shift + Cmd/Ctrl + Z</code>.</li>
 </ul>
-<h2 id="mapping-a-hotspot-to-a-product">Mapping a hotspot to a product<a class="headerlink" href="#mapping-a-hotspot-to-a-product" title="Permanent link">&para;</a></h2>
-<p>This is what makes the hotspot interactive on the storefront.</p>
-<p>In the inspector for the selected hotspot:</p>
+<h2 id="assigning-a-product-to-a-hotspot">Assigning a product to a hotspot<a class="headerlink" href="#assigning-a-product-to-a-hotspot" title="Permanent link">&para;</a></h2>
+<p>With a hotspot selected, use the <strong>Mapped Products</strong> section in the
+right-hand inspector:</p>
 <ol>
-<li>Use the <strong>Product</strong> picker to search by title or SKU. Pick the
-   matching Shopify product.</li>
-<li>If the product has variants, the <strong>Variant</strong> dropdown becomes
-   active. Pick the specific variant the hotspot represents.</li>
-<li>Leave it on <strong>"Any variant"</strong> if the hotspot represents the
-     product as a whole and shoppers should see the variant picker
-     in the popup.</li>
-<li>Pick a single variant to lock the hotspot to that exact SKU —
-     no picker shown in the popup.</li>
+<li>Click the product search field and type a product name or SKU.</li>
+<li>Pick the matching Shopify product from the results.</li>
+<li>If the product has variants, the <strong>Variant</strong> dropdown becomes active:<ul>
+<li>Leave it on <strong>"Any variant"</strong> — shoppers see a variant picker in the
+  popup when they click this hotspot.</li>
+<li>Pick a specific variant — the hotspot is locked to that exact SKU
+  and no picker is shown.</li>
+</ul>
+</li>
 </ol>
-<p>The app records a snapshot (price, compare-at price, image, SKU) at
-mapping time, so the storefront can render an accurate first paint
-even before live data loads.</p>
+<p>The app stores a snapshot of the product's price, image, and SKU at
+mapping time, so the storefront renders immediately on first load.</p>
 <h2 id="labels-and-display-titles">Labels and display titles<a class="headerlink" href="#labels-and-display-titles" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1849,28 +1904,56 @@ even before live data loads.</p>
 <tbody>
 <tr>
 <td><strong>Label</strong></td>
-<td>Hover tooltip on the image; bold title in the side panel and popup</td>
-<td>Always recommended — short and friendly ("Toe buckle", not "TC-447-A")</td>
+<td>Hover tooltip; bold title in parts list and popup</td>
+<td>Always recommended — use a short shopper-friendly name like <em>"Boiler"</em> instead of a SKU</td>
 </tr>
 <tr>
 <td><strong>Custom display title</strong></td>
-<td>Overrides the product name shown in the popup body</td>
-<td>Rarely needed. Use it when the Shopify product name is too long or technical to surface to shoppers</td>
+<td>Overrides the product name in the popup body</td>
+<td>Rarely needed — use when the Shopify product name is too long or technical</td>
 </tr>
 </tbody>
 </table>
 <div class="admonition info">
 <p class="admonition-title">Label takes priority over product title</p>
 <p>If a hotspot has a label, the storefront shows the <strong>label</strong> as the
-bold title for that part. If the label is empty, the storefront
-falls back to the underlying product's title. This keeps the side
-panel readable even when many parts share the same base product.</p>
+bold title for that part. If the label is empty, it falls back to the
+product title. This keeps the parts list readable when many hotspots
+share the same base product.</p>
 </div>
 <h2 id="saving">Saving<a class="headerlink" href="#saving" title="Permanent link">&para;</a></h2>
-<p>The editor auto-saves every few seconds while you work. The header
-shows a <strong>Saved</strong> indicator after each change. There's no separate
-"publish" step — once a hotspot is saved on a diagram that's
-<a href="../assignments/">assigned to a product</a>, it's live on the storefront.</p>
+<p>The editor <strong>auto-saves</strong> every few seconds while you work. A
+<strong>"All changes saved"</strong> indicator appears next to the diagram title after
+each change. There is no separate "publish" step — once a hotspot is saved
+on a diagram that's <a href="../product-diagrams/">assigned to a product</a>, it's
+immediately live on the storefront.</p>
+<h2 id="zoom-and-navigation">Zoom and navigation<a class="headerlink" href="#zoom-and-navigation" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>How</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fit entire diagram to canvas</td>
+<td>Press <code>0</code> (zero) or click <strong>Fit</strong></td>
+</tr>
+<tr>
+<td>Jump to 100% zoom</td>
+<td>Press <code>1</code></td>
+</tr>
+<tr>
+<td>Zoom in / out</td>
+<td>Scroll wheel</td>
+</tr>
+<tr>
+<td>Pan the canvas</td>
+<td>Hold <code>Space</code> and drag</td>
+</tr>
+</tbody>
+</table>
 <h2 id="keyboard-shortcuts-full-list">Keyboard shortcuts (full list)<a class="headerlink" href="#keyboard-shortcuts-full-list" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -1885,28 +1968,28 @@ shows a <strong>Saved</strong> indicator after each change. There's no separate
 <td><code>V</code></td>
 </tr>
 <tr>
-<td>Rectangle tool</td>
+<td>Polygon tool</td>
 <td><code>R</code></td>
 </tr>
 <tr>
-<td>Point tool</td>
+<td>Pin tool</td>
 <td><code>P</code></td>
 </tr>
 <tr>
 <td>Pan canvas</td>
-<td>hold <code>Space</code> and drag</td>
+<td>Hold <code>Space</code> and drag</td>
 </tr>
 <tr>
-<td>Undo / Redo</td>
-<td><kbd>Cmd</kbd>/<kbd>Ctrl</kbd> + <kbd>Z</kbd> / <kbd>Shift</kbd> + <kbd>Cmd</kbd>/<kbd>Ctrl</kbd> + <kbd>Z</kbd></td>
+<td>Undo</td>
+<td><code>Cmd/Ctrl + Z</code></td>
+</tr>
+<tr>
+<td>Redo</td>
+<td><code>Shift + Cmd/Ctrl + Z</code></td>
 </tr>
 <tr>
 <td>Delete hotspot</td>
-<td><kbd>Delete</kbd> or <kbd>Backspace</kbd></td>
-</tr>
-<tr>
-<td>Zoom in / out</td>
-<td>scroll wheel</td>
+<td><code>Delete</code> or <code>Backspace</code></td>
 </tr>
 <tr>
 <td>Fit to canvas</td>
@@ -1915,6 +1998,10 @@ shows a <strong>Saved</strong> indicator after each change. There's no separate
 <tr>
 <td>100% zoom</td>
 <td><code>1</code></td>
+</tr>
+<tr>
+<td>Zoom in / out</td>
+<td>Scroll wheel</td>
 </tr>
 </tbody>
 </table>
